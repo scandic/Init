@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pushkarcreations_distinct>
+            <version>1.0.0</version>
+            <depends>
+                <!-- no dependencies -->
+            </depends>
+        </Pushkarcreations_distinct>
+    </modules>
+
+    <global>
+
+        <blocks>
+            <page>
+                <rewrite>
+                    <html_topmenu>Pushkarcreations_distinct_Block_Topmenu</html_topmenu>
+                </rewrite>
+            </page>
+        </blocks>
+
+        <helpers>
+            <distincthelper>
+                <class>Pushkarcreations_distinct_Helper</class>
+            </distincthelper>
+        </helpers>
+
+    </global>
+
+</config>
+
