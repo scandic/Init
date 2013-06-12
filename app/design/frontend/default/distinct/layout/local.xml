@@ -183,6 +183,11 @@
             </action>
             <action method="addItem">
                 <type>skin_css</type>
+                <name>css/style.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
                 <name>css/responsive-tables.css</name>
                 <params/>
             </action>

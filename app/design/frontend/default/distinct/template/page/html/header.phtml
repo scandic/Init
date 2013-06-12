@@ -1,23 +1,67 @@
-    <div class="super-header ">
-        <div class="columns ten">
-        <div class="welcome-msg">
-            <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-        </div>
-        </div>
+<script type="text/javascript">
+    jQuery(function(){
+        /*jQuery("#SearchButton").click(function(){
+            if( jQuery(".search-field").css("display") != "none" ){
+                jQuery(".search-field").parents("form").submit();
+            }else{
+                jQuery(".search-field").css({ background:'white' }).show();
+                jQuery(".search-field").parents(".site-search").animate({width:'20%'}, 'slow');
+                
+                jQuery("#SearchButton").css({ background:'#8E381E' });
+                
+                return false;
+            }
+        });
+        jQuery(document).bind('click', function fun(evt) {
+            var target = jQuery(evt.target);    
+            if ( target.attr('id') != "SearchButton" && !target.parents('.site-search').length && jQuery(".search-field").length > 0) {
+                jQuery(".search-field").parents(".site-search").animate({width:'5%'}, 'slow');
+                jQuery(".search-field").animate({background:'none'}, 'slow');
+                jQuery(".search-field").hide('slow');
+            }
+        });*/
+        jQuery("#search").focus(function(){
+            //jQuery(this).parent().removeClass('four');
+            jQuery(this).parent().animate({width:"58.33333%"},'slow');
+        });
+        jQuery("#search").blur(function(){
+            jQuery(this).parent().animate({width:"33.33333%"},'medium');
+        });
 
-        <div class="store-currency columns one">
+    });
+</script>
+<?php if($this->getRequest()->getControllerName()=='result' || $this->getRequest()->getControllerName()=='advanced' ) : ?>
+    <style type="text/css">
+        .search-field{ display: block;background: white; }
+        .site-search{ width: 20%; }
+        #SearchButton{ background: #8E381E; }
+    </style>
+<?php endif; ?>
+<div class="super-header ">
+    <div class="row">
+        <div class="columns nine">
+            
+        </div>
+        <div class="columns two">
+            <div class="welcome-msg">
+                <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+            </div>
+        </div>
+        <div class="store-currency columns one large-offset-3">
             <?php echo $this->getChildHtml('store_currency_selector') ?>
         </div>
-        <div class="site-language columns one">
+        <div class="site-language columns one large-offset-3">
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
-
-        </div>
     </div>
-    <header class="site-header">
+</div>
+
+<header class="site-header">
+    <div class="row">
+       
         <div class="site-identity">
         <?php if ($this->getIsHomePage()):?>
-            <h1 class="site-logo">
+            <h1 class="site-logo .two .columns">
                 <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="site-logo">
                     <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
                 </a>
@@ -27,10 +71,7 @@
                 <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
         <?php endif?>
         </div>
-        <div class="site-search">
-            <?php echo $this->getChildHtml('topSearch') ?>
-        </div>
-
+        
         <div class="site-account">
             <ul class="nav-bar right">
                 <li class="has-flyout">
@@ -49,45 +90,51 @@
                 </li>
             </ul>
         </div>
-
-
-
+        <?php /* ?>
         <div class="site-cart">
             <i class="icon-shopping-cart"></i>
-                <?php
-                $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
-                $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
-                ?>
+            <?php
+            $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+            $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+            ?>
 
-                <?php if($count == 0):?>
-                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
-                <?php endif; ?>
-                <?php if($count == 1):?>
-                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
-                <?php endif; ?>
-                <?php if($count >= 2):?>
-                    <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
-                <?php endif; ?>
-                <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
-                <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+            <?php if($count == 0):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('0 Items', $count) ?></a>
+            <?php endif; ?>
+            <?php if($count == 1):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('1 Item', $count) ?></a>
+            <?php endif; ?>
+            <?php if($count >= 2):?>
+                <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('%s Items', $count) ?></a>
+            <?php endif; ?>
+            <?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
+            <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+        </div>
+        <?php */ ?>
+        <div class="site-search">
+            <?php echo $this->getChildHtml('topSearch') ?>
         </div>
     </div>
-    </header>
-    <div class="site-nav">
+</header>
+
+<div class="separator"></div>
+
+<div class="site-nav">
+    <div class="row">
         <div class="columns twelve">
-        <nav class="top-bar">
-            <ul>
-                <li class="name">
+            <nav class="top-bar">
+                <ul>
+                    <li class="name">
 
-                </li>
-                <li class="toggle-topbar"><a href="#"></a></li>
-            </ul>
-            <section>
-                <ul class="left">
-            <?php echo $this->getChildHtml('topMenu') ?>
+                    </li>
+                    <li class="toggle-topbar"><a href="#"></a></li>
                 </ul>
-            </section>
-        </nav>
+                <section>
+                    <ul class="left">
+                        <?php echo $this->getChildHtml('topMenu') ?>
+                    </ul>
+                </section>
+            </nav>
         </div>
+    </div>
 </div>
-
