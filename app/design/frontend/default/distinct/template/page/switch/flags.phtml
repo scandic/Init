@@ -26,14 +26,12 @@
 ?>
 <?php if(count($this->getStores())>1): ?>
     <div class="form-language">
-        <form class="custom" action="#">
-            <label for="select-language"><?php echo $this->__('Your Language:') ?></label>
-            <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value" class="flags">
-                <?php foreach ($this->getStores() as $_lang): ?>
-                    <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
-                    <option value="<?php echo $_lang->getCurrentUrl() ?>" style="background-image:url('<?php echo $this->getSkinUrl('images/flags/flag_'.$_lang->getCode().'.gif') ?>');"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>
-                <?php endforeach; ?>
-            </select>
-        </form>
+        <dl class="sub-nav flags" id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value" class="flags">
+            <dt><?php echo $this->__('Your Languages : ') ?></dt>
+            <?php foreach ($this->getStores() as $_lang): ?>
+                <?php //$_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
+                <dd style="background-image:url('<?php echo $this->getSkinUrl('images/flags/flag_'.$_lang->getCode().'.gif') ?>');"<?php //echo $_selected ?>><a href="<?php echo $_lang->getCurrentUrl() ?>"><?php echo $this->htmlEscape($_lang->getName()) ?></a></dd>
+            <?php endforeach; ?>
+        </dl>
     </div>
 <?php endif; ?>

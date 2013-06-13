@@ -20,13 +20,13 @@
                 jQuery(".search-field").hide('slow');
             }
         });*/
-        jQuery("#search").focus(function(){
+        /*jQuery("input#search").focus(function(){
             //jQuery(this).parent().removeClass('four');
-            jQuery(this).parent().animate({width:"58.33333%"},'slow');
+            jQuery(this).parents(".search-field-compressed").animate({width:"58.33333%"},'slow');
         });
-        jQuery("#search").blur(function(){
-            jQuery(this).parent().animate({width:"33.33333%"},'medium');
-        });
+        jQuery("input#search").blur(function(){
+            jQuery(this).parents(".search-field-compressed").animate({width:"41.66667%"},'medium');
+        });*/
 
     });
 </script>
@@ -42,15 +42,15 @@
         <div class="columns nine">
             
         </div>
-        <div class="columns two">
+        <div class="store-currency columns one">
+            <?php echo $this->getChildHtml('store_currency_selector') ?>
+        </div>
+        <div class="columns two ">
             <div class="welcome-msg">
                 <p><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
             </div>
         </div>
-        <div class="store-currency columns one large-offset-3">
-            <?php echo $this->getChildHtml('store_currency_selector') ?>
-        </div>
-        <div class="site-language columns one large-offset-3">
+        <div class="site-language columns ">
             <?php echo $this->getChildHtml('store_language') ?>
         </div>
     </div>
@@ -75,9 +75,9 @@
         <div class="site-account">
             <ul class="nav-bar right">
                 <li class="has-flyout">
-                    <a href="<?php echo $this->getUrl('customer/account') ?>"><i class="icon-user"></i></a>
+                    <a href="<?php echo $this->getUrl('customer/account') ?>"><i class="icon-shopping-cart"></i></a>
                     <a href="#" class="flyout-toggle"><span> </span></a>
-                    <ul class="flyout small right">
+                    <?php /* ?><ul class="flyout small right">
                         <li>
                             <?php if($this->helper('customer')->isLoggedIn()):   ?>
                                 <a href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo $this->__('Log out') ?></a>
@@ -86,7 +86,10 @@
                             <?php endif; ?>
                         </li>
 
-                    </ul>
+                    </ul><?php */ ?>
+                    <div class="flyout large right">
+                        <?php echo $this->getLayout()->createBlock('checkout/cart_sidebar')->setTemplate('checkout/cart/sidebar.phtml')->toHtml(); ?>
+                    </div>
                 </li>
             </ul>
         </div>
