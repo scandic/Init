@@ -33,7 +33,7 @@
         <dl>
         <?php foreach ($_items as $_review):?>
             <dt>
-                <h5><?php echo $this->htmlEscape($_review->getTitle()) ?></h5>
+                <h5><i class="icon-comment"></i> <?php echo $this->htmlEscape($_review->getTitle()) ?></h5>
                 <span class="review-by"><?php echo $this->__('Review by <span>%s</span>', $this->htmlEscape($_review->getNickname())) ?></span>
             </dt>
             <dd>

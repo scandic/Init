@@ -17,7 +17,11 @@ body{ font-size:12px;font-family: "Lucida Sans Unicode", "Lucida Grande", sans-s
 h1.logo, h1.logo a, header a.logo{ margin:0; }
 a{ color:#81C6DD; }
 a:hover{ color:#568DC8;transition:color 0.2s linear 0s;-webkit-transition:color 0.2s linear 0s;-moz-transition:color 0.2s linear 0s; }
-.button{ background: rgba(54, 54, 54, 0.78);font-weight: normal; }
+.button{ background: #90CA77;font-weight: normal;border: 1px solid rgb(148, 189, 130); }
+.button:hover{ background: rgba(102, 163, 75, 0.8); }
+th.label{ font-weight: normal;background: #DB572F;bottom: -1px; }
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus{ outline: 0; }
+table thead tr th, table tfoot tr td{ font-weight: normal; }
 
 /*======================================= Header ===============================*/
 .super-header, .site-header, .site-nav{ width: 100%; }
@@ -28,6 +32,7 @@ a:hover{ color:#568DC8;transition:color 0.2s linear 0s;-webkit-transition:color 
 .super-header{ border:none; }
 .site-header{ min-height: 80px; }
 .separator{ width: 100%;height: 1px;border-bottom: 1px solid white;position: relative; }
+.site-identity{ margin: 0 15px; }
 
 .site-language{ padding:0 15px; }
 .site-language .sub-nav.flags{ margin-bottom: 0; }
@@ -59,3 +64,13 @@ a:hover{ color:#568DC8;transition:color 0.2s linear 0s;-webkit-transition:color 
 .site-account .nav-bar .has-flyout{ border:none; }
 .site-account .nav-bar .flyout{ background: #FFF;color:#4d4d4d; }
 .nav-bar>li.has-flyout>a:first-child{ padding-bottom: 5px; }
+
+/*========================================== Product View =====================*/
+.col-right.sidebar{ padding-top: 0; }
+
+.product-view h2, .box-collateral h3{ font-size: 18px; }
+
+.product-shop .add-to-cart button.button{ font-weight: normal; }
+
+#customer-reviews dt h5{ font-size: 16px;border-bottom: 1px dashed rgb(83, 83, 83);padding-bottom: 10px; }
+#customer-reviews dt h5 i{ background: #DB572F;color: white;padding: 2px; }
