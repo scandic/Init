@@ -27,15 +27,41 @@
 
 <div class="site-footer">
     <?php echo $this->getChildHtml("mobile.menu.footer") ?>
-    <footer>
+    <footer class="row">
         <div class="columns twelve">
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_demo_links')->toHtml(); ?>
         </div>
         <div class="columns twelve">
-            <div class="line-separator"></div>
-            <div class="newsletter columns six"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
+            <!--<div class="line-separator"></div>-->
+            <div class="columns three cms-pages">
+                <h5 class="footer-block-title">Heading</h5>
+                <?php echo $this->getChildHtml('footer_links'); ?>
+            </div>
+            <div class="columns three cms-pages">
+                <h5 class="footer-block-title">Heading</h5>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Catalog</a></li>
+                    <li><a href="">CMS</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">About Us</a></li>
+                </ul>
+            </div>
+            <div class="columns three cms-pages">
+                <h5 class="footer-block-title">Heading</h5>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Catalog</a></li>
+                    <li><a href="">CMS</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">About Us</a></li>
+                </ul>
+            </div>
+            <div class="newsletter columns three"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
         </div>
+
+        <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
+        <div class="clear line-separator"></div>
         <address class="columns twelve"><?php echo $this->getCopyright() ?></address>
     </footer>
 </div>
