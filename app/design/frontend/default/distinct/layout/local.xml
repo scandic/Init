@@ -281,6 +281,8 @@ just in case I want to add the block somewhere else -->
             <block type="newsletter/subscribe" after="-" name="footer.newsletter"
                    template="newsletter/subscribe.phtml"/>
             <block type="core/template" name="mobile.menu.footer" template="page/mobile-menu-footer.phtml"/>
+            
+            <block type="core/template" name="contactForm" template="contacts/form_footer.phtml"/>
         </reference>
         <!-- //Add/Remove Footer Links -->
 
@@ -296,6 +298,8 @@ just in case I want to add the block somewhere else -->
         </reference>
         <!-- //Right Column Changes globally... -->
 
+        
+        
     </default>
     <!-- //Global Operations -->
 

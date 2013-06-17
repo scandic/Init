@@ -34,6 +34,15 @@
         <div class="columns twelve">
             <!--<div class="line-separator"></div>-->
             <div class="columns three cms-pages">
+                <a class="twitter-timeline" href="https://twitter.com/mukkundthanki" data-theme="dark" data-widget-id="334544151800606720" data-link-color="#C76711" height="200" data-chrome="nofooter noheader noborders transparent" data-screen-name="mukkundthanki" data-tweet-limit="2">Tweets by @mukkundthanki</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <ul class="side-nav">
+                    <li><i class="icon-envelope"></i> info@website.com</li>
+                    <li><i class="icon-map-marker"></i> Address line, city, zipcode.</li>
+                    <li><i class="icon-phone"></i> +(125) 256 258</li>
+                </ul>
+            </div>
+            <div class="columns three cms-pages">
                 <h5 class="footer-block-title">Heading</h5>
                 <?php echo $this->getChildHtml('footer_links'); ?>
             </div>
@@ -46,22 +55,30 @@
                     <li><a href="">Contact Us</a></li>
                     <li><a href="">About Us</a></li>
                 </ul>
+            </div>            
+            <div class="three columns">
+                <?php echo $this->getChildHtml('contactForm') ?>
+                
             </div>
-            <div class="columns three cms-pages">
-                <h5 class="footer-block-title">Heading</h5>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Catalog</a></li>
-                    <li><a href="">CMS</a></li>
-                    <li><a href="">Contact Us</a></li>
-                    <li><a href="">About Us</a></li>
-                </ul>
-            </div>
-            <div class="newsletter columns three"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
         </div>
 
         <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
         <div class="clear line-separator"></div>
-        <address class="columns twelve"><?php echo $this->getCopyright() ?></address>
+        <div class="twelve">
+            <div class="newsletter columns four">
+                <?php echo $this->getChildHtml("footer.newsletter") ?>
+                
+            </div>
+            <div class="columns six">
+                <address class="right"><?php echo $this->getCopyright() ?></address>
+                <div class="clear"></div>
+                <dl class="sub-nav social-icons right">
+                    <dd><a href="#" class="facebook"><i class="icon-facebook"></i></a></dd>
+                    <dd><a href="#" class="twitter"><i class="icon-twitter"></i></a></dd>
+                    <dd><a href="#" class="google"><i class="icon-google-plus"></i></a></dd>
+                    <dd><a href="#" class="github"><i class="icon-github"></i></a></dd>
+                </dl>
+            </div>
+        </div>
     </footer>
 </div>

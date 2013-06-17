@@ -30,12 +30,13 @@
     </div>
     <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
         <div class="block-content">
-            <div class="input-box">
+            <div class="input-box columns eight left">
                <input type="text" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email" />
             </div>
-            <div class="actions">
+            <div class="actions columns two left">
                 <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
             </div>
+            <div class="clear"></div>
         </div>
     </form>
     <script type="text/javascript">
