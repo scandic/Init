@@ -76,7 +76,12 @@ table thead tr th, table tfoot tr td{ font-weight: normal; }
 #customer-reviews dt h5 i{ background: #DB572F;color: white;padding: 2px; }
 
 /*===================================== Footer ============================*/
-.site-footer{ background: rgba(35, 36, 36, 0.81);border-top:4px solid rgb(214, 72, 72);color:rgb(223, 223, 223); }
+.site-features{ background:rgba(251, 202, 60, 0.74);width: 100%; }
+.site-features .single-block{ background: rgba(221, 124, 124, 0.69);border-left: 1px solid #FFF;border-right: 1px solid #FFF;transition:all 0.2s linear 0s;-webkit-transition:all 0.2s linear 0s;-moz-transition:all 0.2s linear 0s; }
+.site-features .single-block:hover{ background: rgba(221, 124, 124, 1);transition:all 0.2s linear 0s;-webkit-transition:all 0.2s linear 0s;-moz-transition:all 0.2s linear 0s; }
+.site-features .single-block:hover h5{ color:white; }
+
+.site-footer{ background: rgba(35, 36, 36, 0.81);border-top:4px solid rgb(214, 72, 72);color:rgb(223, 223, 223);margin-top: 0; }
 .site-footer footer{ background: none;border: none;padding-bottom: 0;margin-bottom: 0; }
 h5.footer-block-title{ color:rgb(223, 223, 223);margin-top: 0; }
 .site-footer a{ color:rgba(179, 174, 174, 0.84); }
@@ -89,6 +94,8 @@ h5.footer-block-title{ color:rgb(223, 223, 223);margin-top: 0; }
 .block-subscribe .input-box{ padding-left:0; }
 .block-subscribe .actions{ padding:0; }
 .block-subscribe .actions .button{ padding:8px 20px 8px; }
+
+.site-footer .side-nav{ padding-top: 0; }
 
 .sub-nav.social-icons{ margin-top: 10px; }
 .social-icons.sub-nav dd a{ font-size: 20px;background: rgba(219, 219, 219, 0.77);padding: 5px;text-align: center;width: 33px;border-radius: 0;display: block;transition:all 0.2s linear 0s;-webkit-transition:all 0.2s linear 0s;-moz-transition:all 0.2s linear 0s; }

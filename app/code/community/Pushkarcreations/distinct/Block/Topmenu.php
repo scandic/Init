@@ -4,7 +4,7 @@ class Pushkarcreations_distinct_Block_Topmenu extends Mage_Page_Block_Html_Topme
     protected function _getHtml(Varien_Data_Tree_Node $menuTree, $childrenWrapClass)
     {
 
-        if (!Mage::helper('distincthelper')->getIsActive()){
+        if (!Mage::helper('distincthelper')->getIsActive('distinctsection/distinctgroup/theme')){
             return parent::_getHtml($menuTree,$childrenWrapClass);
         }
 
@@ -66,7 +66,7 @@ class Pushkarcreations_distinct_Block_Topmenu extends Mage_Page_Block_Html_Topme
 
     protected function _getMenuItemClasses(Varien_Data_Tree_Node $item)
     {
-        if (!Mage::helper('distincthelper')->getIsActive()){
+        if (!Mage::helper('distincthelper')->getIsActive('distinctsection/distinctgroup/theme')){
             return parent::_getMenuItemClasses($item);
         }
 

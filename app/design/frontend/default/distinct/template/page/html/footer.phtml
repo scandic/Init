@@ -24,28 +24,30 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-
+<div class="site-features">
+    <div class="row">
+        <div class="columns three single-block">
+            <h5 class="feature-title"><i class="icon-star"></i> Heading</h5>
+        </div>
+        <div class="columns three single-block">
+            <h5 class="feature-title"><i class="icon-star"></i> Heading</h5>
+        </div>
+        <div class="columns three single-block">
+            <h5 class="feature-title"><i class="icon-star"></i> Heading</h5>
+        </div>
+        <div class="columns three single-block">
+            <h5 class="feature-title"><i class="icon-star"></i> Heading</h5>
+        </div>
+    </div>
+</div>
 <div class="site-footer">
-    <?php echo $this->getChildHtml("mobile.menu.footer") ?>
+    <?php echo $this->getChildHtml("mobile.menu.footer") ?>    
     <footer class="row">
         <div class="columns twelve">
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_demo_links')->toHtml(); ?>
         </div>
         <div class="columns twelve">
             <!--<div class="line-separator"></div>-->
-            <div class="columns three cms-pages">
-                <a class="twitter-timeline" href="https://twitter.com/mukkundthanki" data-theme="dark" data-widget-id="334544151800606720" data-link-color="#C76711" height="200" data-chrome="nofooter noheader noborders transparent" data-screen-name="mukkundthanki" data-tweet-limit="2">Tweets by @mukkundthanki</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                <ul class="side-nav">
-                    <li><i class="icon-envelope"></i> info@website.com</li>
-                    <li><i class="icon-map-marker"></i> Address line, city, zipcode.</li>
-                    <li><i class="icon-phone"></i> +(125) 256 258</li>
-                </ul>
-            </div>
-            <div class="columns three cms-pages">
-                <h5 class="footer-block-title">Heading</h5>
-                <?php echo $this->getChildHtml('footer_links'); ?>
-            </div>
             <div class="columns three cms-pages">
                 <h5 class="footer-block-title">Heading</h5>
                 <ul>
@@ -55,6 +57,18 @@
                     <li><a href="">Contact Us</a></li>
                     <li><a href="">About Us</a></li>
                 </ul>
+                
+            </div>
+            <div class="columns three cms-pages">
+                <h5 class="footer-block-title">Heading</h5>
+                <?php echo $this->getChildHtml('footer_links'); ?>
+            </div>
+            <div class="columns three cms-pages">
+                <?php if(Mage::helper('distincthelper')->getIsactive('distinctsection/distinctsocial/enable_twitter_timeline')): ?>
+                    <?php $twitterUsername = (Mage::helper('distincthelper')->getTwitterUsername()) ? Mage::helper('distincthelper')->getTwitterUsername() : "mukkundthanki"; ?>
+                    <a class="twitter-timeline" href="https://twitter.com/<?php echo $twitterUsername ?>" data-theme="dark" data-widget-id="334544151800606720" data-link-color="#FFF" height="315" data-chrome="nofooter transparent" data-screen-name="<?php echo $twitterUsername ?>" >Tweets by @<?php echo $twitterUsername ?></a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <?php endif; ?>
             </div>            
             <div class="three columns">
                 <?php echo $this->getChildHtml('contactForm') ?>
@@ -64,12 +78,18 @@
 
         <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
         <div class="clear line-separator"></div>
-        <div class="twelve">
+        <div class="twelve columns">
+            <div class="three columns">
+                <ul class="side-nav ">
+                    <li><i class="icon-envelope"></i> <?php echo Mage::getStoreConfig('trans_email/ident_general/email'); ?></li>
+                    <li><i class="icon-map-marker"></i> <?php echo Mage::getStoreConfig('general/store_information/address'); ?></li>
+                    <li><i class="icon-phone"></i> <?php echo Mage::getStoreConfig('general/store_information/phone'); ?></li>
+                </ul>
+            </div>
             <div class="newsletter columns four">
                 <?php echo $this->getChildHtml("footer.newsletter") ?>
-                
             </div>
-            <div class="columns six">
+            <div class="columns five">
                 <address class="right"><?php echo $this->getCopyright() ?></address>
                 <div class="clear"></div>
                 <dl class="sub-nav social-icons right">
