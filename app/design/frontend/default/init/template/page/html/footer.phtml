@@ -33,7 +33,14 @@
         </div>
         <div class="columns twelve">
             <div class="line-separator"></div>
-            <div class="newsletter columns six"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
+            <div class="newsletter columns four"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
+            <div class="columns three cms-pages">
+                <?php if(Mage::helper('inithelper')->getIsactive('initsection/initsocial/enable_twitter_timeline')): ?>
+                    <?php $twitterUsername = (Mage::helper('inithelper')->getTwitterUsername()) ? Mage::helper('inithelper')->getTwitterUsername() : "mukkundthanki"; ?>
+                    <a class="twitter-timeline" href="https://twitter.com/<?php echo $twitterUsername ?>" data-theme="dark" data-widget-id="334544151800606720" data-link-color="#FFF" height="315" data-chrome="nofooter transparent" data-screen-name="<?php echo $twitterUsername ?>" >Tweets by @<?php echo $twitterUsername ?></a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <?php endif; ?>
+            </div>
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
         </div>
         <address class="columns twelve"><?php echo $this->getCopyright() ?></address>

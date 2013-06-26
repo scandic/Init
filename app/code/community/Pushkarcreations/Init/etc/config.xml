@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <JakeSharp_Waterlee>
+        <Pushkarcreations_Init>
             <version>1.0.0</version>
             <depends>
                 <!-- no dependencies -->
             </depends>
-        </JakeSharp_Waterlee>
+        </Pushkarcreations_Init>
     </modules>
 
     <global>
@@ -14,15 +14,15 @@
         <blocks>
             <page>
                 <rewrite>
-                    <html_topmenu>JakeSharp_Waterlee_Block_Topmenu</html_topmenu>
+                    <html_topmenu>Pushkarcreations_Init_Block_Topmenu</html_topmenu>
                 </rewrite>
             </page>
         </blocks>
 
         <helpers>
-            <waterleehelper>
-                <class>JakeSharp_Waterlee_Helper</class>
-            </waterleehelper>
+            <inithelper>
+                <class>Pushkarcreations_Init_Helper</class>
+            </inithelper>
         </helpers>
 
     </global>
